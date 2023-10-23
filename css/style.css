@@ -1224,6 +1224,18 @@ video#video_background {
 	background-color: rgba(0, 0, 0, 0.6);
 }
 
+.status-sending {
+	position: absolute;
+	color: orange;
+}
+.status-ok {
+	color: green
+}
+.status-failed {
+	color: red
+}
+
+
 @media only screen and (min-width: 992px) {
 	.services-elements > .row > hr:nth-of-type(2n) {
 		clear: none;
