@@ -1,4 +1,5 @@
 const modal = () => {
+    const buttonServices = document.querySelector('.button-services')
     const modalForm = document.querySelector('.modal-callback')
     const overlay = document.querySelector('.modal-overlay')
     const modalBtn = document.querySelectorAll('.callback-btn')
@@ -61,6 +62,7 @@ const modal = () => {
     phoneModallInput.addEventListener('input', (e) => {e.target.value = e.target.value.replace(/[^+\d]/g, "")})
     modalInputs.addEventListener('submit', sendData)
     modalBtn.forEach((elem) => elem.addEventListener('click', onModalOpen))
+    buttonServices.addEventListener('click', onModalOpen)
     closeBtn.addEventListener('click', onModalClose)
     overlay.addEventListener('click', onModalClose)
 

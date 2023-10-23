@@ -1,4 +1,4 @@
-const headerMenu = () => {
+const scrollMenu = () => {
     const menuItems = document.querySelectorAll('.top-menu>ul>li>a')
     
     const scroll = (e) => {
@@ -12,4 +12,4 @@ const headerMenu = () => {
     })
 }
 
-export default headerMenu
+export default scrollMenu
