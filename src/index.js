@@ -8,6 +8,8 @@ import settings from '../css/settings.css'
 import animate from '../css/animate.css'
 //js
 import modal from './modules/modal.js'
+import headerMenu from './modules/headerMenu'
 
 
 modal()
+headerMenu()
