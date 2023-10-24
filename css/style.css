@@ -844,18 +844,23 @@ hr.white {
 }
 .top-slider .slick-dots li {
 	border-color: #fff !important;
+	z-index: 10000;
 }
 .top-slider .slick-dots li.slick-active {
 	background-color: #fff !important;
-}
-.top-slider {
-	overflow: hidden;
-	height: 450px;
 }
 .top-slider .item {
 	overflow: hidden;
 	height: 450px;
 	position: relative;
+	display: none;
+}
+.top-slider .item.active {
+	display: block;
+}
+.top-slider .item.active .table {
+	opacity: 1;
+	visibility: visible;
 }
 .top-slider .item:before {
 	content: "";

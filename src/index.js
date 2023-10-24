@@ -9,9 +9,12 @@ import animate from '../css/animate.css'
 //js
 import modal from './modules/modal.js'
 import scrollMenu from './modules/scrollHeaderMenu'
-
+import sliderTop from './modules/sliderTop'
+import scrollUp from './modules/scroll'
 
 
 modal()
 scrollMenu()
+sliderTop()
+scrollUp()
 
