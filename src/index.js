@@ -12,6 +12,7 @@ import scrollMenu from './modules/scrollHeaderMenu'
 import sliderTop from './modules/sliderTop'
 import scrollUp from './modules/scrollBtn'
 import accordeon from './modules/accordeon'
+import carousel from './modules/carousel'
 
 
 modal()
@@ -19,4 +20,4 @@ scrollMenu()
 sliderTop()
 scrollUp()
 accordeon()
-
+carousel()

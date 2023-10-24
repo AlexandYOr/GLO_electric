@@ -7,6 +7,8 @@ const modal = () => {
     const modalInputs = modalForm.querySelector('form')
     const textModallInput = modalInputs.querySelector('input[name=fio]')
     const phoneModallInput = modalInputs.querySelector('input[name=tel]')
+    const carousel = document.querySelector('.services-carousel')
+    const carouselImg = carousel.querySelectorAll('.img-wrapper')
 
 
 
@@ -60,11 +62,19 @@ const modal = () => {
     }
     textModallInput.addEventListener('input', (e) => {e.target.value = e.target.value.replace(/[^а-яА-ЯёЁ]+/g, "")})
     phoneModallInput.addEventListener('input', (e) => {e.target.value = e.target.value.replace(/[^+\d]/g, "")})
+
+
     modalInputs.addEventListener('submit', sendData)
     modalBtn.forEach((elem) => elem.addEventListener('click', onModalOpen))
+
+    carouselImg.forEach((elem) => {
+        elem.addEventListener('click', onModalOpen)
+    })
+
     buttonServices.addEventListener('click', onModalOpen)
     closeBtn.addEventListener('click', onModalClose)
     overlay.addEventListener('click', onModalClose)
+
 
 }
 
