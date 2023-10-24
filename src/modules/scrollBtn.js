@@ -6,7 +6,7 @@ const scrollUp = () => {
 
     const options = {
         threshold: 0.3
-    };
+    }
      
     
     

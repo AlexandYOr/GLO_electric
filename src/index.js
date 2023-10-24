@@ -7,14 +7,16 @@ import lightGallery from '../css/lightgallery.min.css'
 import settings from '../css/settings.css'
 import animate from '../css/animate.css'
 //js
-import modal from './modules/modal.js'
+import modal from './modules/modal'
 import scrollMenu from './modules/scrollHeaderMenu'
 import sliderTop from './modules/sliderTop'
-import scrollUp from './modules/scroll'
+import scrollUp from './modules/scrollBtn'
+import accordeon from './modules/accordeon'
 
 
 modal()
 scrollMenu()
 sliderTop()
 scrollUp()
+accordeon()
 
