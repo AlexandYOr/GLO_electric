@@ -24,13 +24,17 @@ const modal = () => {
     }
 
     const onModalClose = (e) => {
+        // const removeStatus = document.querySelector('.status')
+        // console.log(modalInputs)
         e.preventDefault()
         changeModalDisplay(false)
+        // removeStatus.remove()
     }
 
 
     const displayStatus = (elem, statusText, status) => {
         elem.textContent = statusText
+        elem.classList.add('status')
         elem.classList.add(status)
     }
     const sendData = async (e) => {
@@ -47,10 +51,10 @@ const modal = () => {
         const payload = JSON.stringify(data);
         try {
             const res = await fetch('https://jsonplaceholder.typicode.com/posts/', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: payload
-        })
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: payload
+            })
             if (!res.ok) {
                 throw new Error(res.error)
             }
@@ -59,9 +63,14 @@ const modal = () => {
             displayStatus(newElem, 'Ошибка', 'status-failed')
             console.log(err)
         }
+        e.target.reset()
+        setTimeout(() => {
+            const removeStatus = document.querySelector('.status')
+            removeStatus.remove()
+        }, 2000);
     }
-    textModallInput.addEventListener('input', (e) => {e.target.value = e.target.value.replace(/[^а-яА-ЯёЁ]+/g, "")})
-    phoneModallInput.addEventListener('input', (e) => {e.target.value = e.target.value.replace(/[^+\d]/g, "")})
+    textModallInput.addEventListener('input', (e) => { e.target.value = e.target.value.replace(/[^а-яА-ЯёЁ]+/g, "") })
+    phoneModallInput.addEventListener('input', (e) => { e.target.value = e.target.value.replace(/[^+\d]/g, "") })
 
 
     modalInputs.addEventListener('submit', sendData)
