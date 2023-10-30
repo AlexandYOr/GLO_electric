@@ -50,7 +50,7 @@ const modal = () => {
         formData.forEach((value, key) => data[key] = value);
         const payload = JSON.stringify(data);
         try {
-            const res = await fetch('https://jsonplaceholder.typicode.com/posts/', {
+            const res = await fetch('https://jsonplaceholder.typicode.com/posts/1', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: payload
@@ -59,15 +59,17 @@ const modal = () => {
                 throw new Error(res.error)
             }
             displayStatus(newElem, 'Отправлено', 'status-ok')
+            setTimeout(() => {
+                const removeStatus = document.querySelector('.status')
+                e.target.reset()
+                removeStatus.remove()
+            }, 1000); //сделал через setTimeout, чтобы пользователь успел увидеть статус отправки.
         } catch (err) {
             displayStatus(newElem, 'Ошибка', 'status-failed')
             console.log(err)
         }
-        e.target.reset()
-        setTimeout(() => {
-            const removeStatus = document.querySelector('.status')
-            removeStatus.remove()
-        }, 2000);
+        
+        
     }
     textModallInput.addEventListener('input', (e) => { e.target.value = e.target.value.replace(/[^а-яА-ЯёЁ]+/g, "") })
     phoneModallInput.addEventListener('input', (e) => { e.target.value = e.target.value.replace(/[^+\d]/g, "") })
