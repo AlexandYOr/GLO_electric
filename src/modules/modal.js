@@ -50,7 +50,7 @@ const modal = () => {
         formData.forEach((value, key) => data[key] = value);
         const payload = JSON.stringify(data);
         try {
-            const res = await fetch('https://jsonplaceholder.typicode.com/posts/1', {
+            const res = await fetch('https://jsonplaceholder.typicode.com/posts/', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: payload
